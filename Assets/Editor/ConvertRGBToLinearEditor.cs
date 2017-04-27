@@ -5,42 +5,45 @@
 using UnityEngine;
 using UnityEditor;
 
-public class ConvertColorToLinearEditor : EditorWindow
+namespace TehLemon.Editor
 {
-    Color m_gamma = Color.white;
-    Color m_linear = Color.white;
-
-    Color m_gammaOld = Color.white;
-
-    [MenuItem("Tools/Convert Colour Space")]
-    public static void ShowWindow()
+    public class ConvertColorToLinearEditor : EditorWindow
     {
-        EditorWindow thisWindow = EditorWindow.GetWindow(typeof(ConvertColorToLinearEditor));
-        thisWindow.titleContent.text = "Color Converter";
-    }
+        Color m_gamma = Color.white;
+        Color m_linear = Color.white;
 
-    void OnGUI()
-    {
-        GUILayout.Label("Gamma", EditorStyles.boldLabel);
-        m_gamma = EditorGUILayout.ColorField(m_gamma);
+        Color m_gammaOld = Color.white;
 
-        GUILayout.Space(5);
-
-        GUILayout.Label("Linear", EditorStyles.boldLabel);
-        m_linear = EditorGUILayout.ColorField(m_linear);
-
-        if (GUI.changed)
+        [MenuItem("Tools/Convert Colour Space")]
+        public static void ShowWindow()
         {
-            if (m_gamma != m_gammaOld)
-            {
-                m_linear = m_gamma.linear;
-            }
-            else
-            {
-                m_gamma = m_linear.gamma;
-            }
+            EditorWindow thisWindow = EditorWindow.GetWindow(typeof(ConvertColorToLinearEditor));
+            thisWindow.titleContent.text = "Color Converter";
+        }
 
-            m_gammaOld = m_gamma;
+        void OnGUI()
+        {
+            GUILayout.Label("Gamma", EditorStyles.boldLabel);
+            m_gamma = EditorGUILayout.ColorField(m_gamma);
+
+            GUILayout.Space(5);
+
+            GUILayout.Label("Linear", EditorStyles.boldLabel);
+            m_linear = EditorGUILayout.ColorField(m_linear);
+
+            if (GUI.changed)
+            {
+                if (m_gamma != m_gammaOld)
+                {
+                    m_linear = m_gamma.linear;
+                }
+                else
+                {
+                    m_gamma = m_linear.gamma;
+                }
+
+                m_gammaOld = m_gamma;
+            }
         }
     }
 }

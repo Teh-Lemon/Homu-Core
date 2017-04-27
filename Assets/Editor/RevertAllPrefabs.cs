@@ -8,23 +8,27 @@
 using UnityEditor;
 using UnityEngine;
 
-public class RevertAllPrefabsEditor
+namespace TehLemon.Editor
 {
-    [MenuItem("Tools/Revert to Prefab")]
-    static void Revert()
+    public class RevertAllPrefabsEditor
     {
-        var selection = Selection.gameObjects;
+        [MenuItem("Tools/Revert to Prefab")]
+        static void Revert()
+        {
+            var selection = Selection.gameObjects;
 
-        if (selection.Length > 0)
-        {
-            for (int i = 0; i < selection.Length; i++)
+            if (selection.Length > 0)
             {
-                PrefabUtility.ResetToPrefabState(selection[i]);
+                for (int i = 0; i < selection.Length; i++)
+                {
+                    PrefabUtility.RevertPrefabInstance(selection[i]);
+                }
             }
-        }
-        else
-        {
-            Debug.Log("Cannot revert to prefab - nothing selected");
+            else
+            {
+                Debug.Log("Cannot revert to prefab - nothing selected");
+                return;
+            }
         }
     }
 }

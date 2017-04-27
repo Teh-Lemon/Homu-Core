@@ -3,24 +3,27 @@
 
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Assertions;
 
 namespace TehLemon.Editor
 {
     public class MascotPanel : EditorWindow
     {
-        Texture2D m_texture = null;
+        static Texture2D m_texture = null;
 
         [MenuItem ( "Window/Mascot ")]
         static void Open()
         {
             EditorWindow.GetWindow<MascotPanel>("Mascot");
+
+            m_texture = Resources.Load("EditorResources/mascot") as Texture2D;
+            Assert.IsNotNull(m_texture, "Mascot Panel: Resources/EditorResources/mascot not found");
         }
 
         void OnGUI()
         {
             if (m_texture == null)
             {
-                m_texture = Resources.Load("EditorResources/mascot") as Texture2D;
                 return;
             }
 

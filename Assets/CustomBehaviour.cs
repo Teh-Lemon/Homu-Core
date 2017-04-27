@@ -7,7 +7,7 @@ using UnityEngine;
 using MovementEffects;
 using System.Collections.Generic;
 
-namespace TehLemon.Hoihoi
+namespace TehLemon
 {
     public class CustomBehaviour : MonoBehaviour
     {
