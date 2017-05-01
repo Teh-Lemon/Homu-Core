@@ -48,16 +48,30 @@ Needed as the script order is not guarunteed when the game is played from the Ed
 ### Shaders
 
 #### Nothing
-The standard shader at 0% opacity still has draw calls even though you can't see it.  
+The Standard shader at 0% opacity still has draw calls even though you can't see it.  
 This surface shader however literally renders nothing and does as few calculations as possible.  
 Useful for hiding parts of a mesh via materials.
+
+#### StandardPacked
+A surface shader that aims to replicate the functionality of the Standard shader and can be found in the TehLemon/StandardPacked shader menu.  
+Unity's Standard shader packs both the metallic and smoothness maps into 1 file.  
+This shader packs 4 textures into 1 file to save texture samples and memory.
+
+Red: Metallic  
+Green: Ambient Occlusion  
+Blue: Emission Mask  
+Alpha: Smoothness  
+
+StandardPackedExtra also includes the secondary detail maps and the height map.
+
+I'd like to further improve the inspector GUI of the shader to include some of the conveniences of the Standard shader but this has no impact on its current functionality.
 
 ### Static Utilities
 
 #### Math functions (UtilHelper.cs)
-A collection of static math helper functions.
+A collection of static math helper functions. Check the comments for more details on each function.
 
-### Recommended Third Party Assets
+### Recommended Third Party Utilities
 I also include these third party scripts into every new project:
 * https://github.com/madsbangh/EasyButtons  
 Very quickly add buttons for any function of a script into the inspector window.  
