@@ -50,10 +50,11 @@ Needed as the script order is not guarunteed when the game is played from the Ed
 #### Nothing
 The Standard shader at 0% opacity still has draw calls even though you can't see it.  
 This surface shader however literally renders nothing and does as few calculations as possible.  
-Useful for hiding parts of a mesh via materials.
+Useful for hiding parts of a mesh via materials.  
+Found in the **TehLemon/Nothing shader menu**.
 
 #### StandardPacked
-A surface shader that aims to replicate the functionality of the Standard shader and can be found in the TehLemon/StandardPacked shader menu.  
+A surface shader that aims to replicate the functionality of the Standard shader and can be found in the **TehLemon/StandardPacked** shader menu.  
 Unity's Standard shader packs both the metallic and smoothness maps into 1 file.  
 This shader packs 4 textures into 1 file to save texture samples and memory.
 
