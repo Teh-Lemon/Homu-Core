@@ -27,7 +27,7 @@ A panel for the Editor that displays an image.
 Access from the **Windows** menu.  
 Name your image "mascot" and place it in the folder "**Assets/Editor Default Resources/**".  
 Supports .jpg, .png and .gif.  
-![Mascot Screenshot](Images/Mascot.png)
+<img src="Images/Mascot.png" width="208" />
 
 #### Revert to Prefab (RevertAllPrefabs.cs)
 Reverts all the selected gameobjects in the Editor back to their prefab state.
