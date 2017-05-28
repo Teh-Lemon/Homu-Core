@@ -1,6 +1,7 @@
 ﻿// Static class of math helper functions
 
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace TehLemon.Utilities
 {
@@ -89,7 +90,6 @@ namespace TehLemon.Utilities
         /// Frame rate independant damping using lerp
         /// </summary>
         /// <param name="speed">Range: 0 to infinity. The lower the slower/more damping.</param>
-        /// <param name="dt">delta time between frames</param>
         /// <returns></returns>
         public static float Damp(float source, float target, float speed)
         {
@@ -99,7 +99,6 @@ namespace TehLemon.Utilities
         /// Frame rate independant damping using lerp
         /// </summary>
         /// <param name="speed">Range: 0 to infinity. The lower the slower/more damping.</param>
-        /// <param name="dt">delta time between frames</param>
         /// <returns></returns>
         public static Vector3 Damp(Vector3 source, Vector3 target, float speed)
         {
@@ -109,11 +108,21 @@ namespace TehLemon.Utilities
         /// Frame rate independant damping using slerp
         /// </summary>
         /// <param name="speed">Range: 0 to infinity. The lower the slower/more damping.</param>
-        /// <param name="dt">delta time between frames</param>
         /// <returns></returns>
         public static Quaternion DampS(Quaternion source, Quaternion target, float speed)
         {
             return Quaternion.Slerp(source, target, 1 - Mathf.Exp(-speed * Time.deltaTime));
+        }
+
+        /// <summary>
+        /// Frame rate independant damping using slerp
+        /// </summary>
+        /// <param name="speed">Range: 0 to infinity. The lower the slower/more damping.</param>
+        /// <param name="dt">delta time between frames</param>
+        /// <returns></returns>
+        public static Quaternion DampS( Quaternion source, Quaternion target, float speed, float dt )
+        {
+            return Quaternion.Slerp(source, target, 1 - Mathf.Exp(-speed * dt));
         }
 
         /// <summary>
@@ -132,6 +141,33 @@ namespace TehLemon.Utilities
         public static float SmootherStep(float percentage)
         {
             return percentage * percentage * percentage * (percentage * (6f * percentage - 15f) + 10f);
+        }
+
+        /// <summary>
+        /// Convert any square mappings (eg xbone gamepad) to a circle map 
+        /// https://mathproofs.blogspot.com/2005/07/mapping-square-to-circle.html
+        /// </summary>
+        public static Vector2 ConvertSquareMapToCircle(float x, float y)
+        {
+            if (x > 1 || y > 1)
+            {
+                Debug.LogErrorFormat("ConvertSquareMapToCircle: Value larger than 1 passed in. x {0} y {1}", x, y);
+                return Vector2.zero;
+            }
+
+            float newX = x * Mathf.Sqrt(1f - (0.5f * y * y));
+            float newY = y * Mathf.Sqrt(1f - (0.5f * x * x));
+
+            return new Vector2(newX, newY);
+        }
+
+        /// <summary>
+        /// Convert any square mappings (eg xbone gamepad) to a circle map 
+        /// https://mathproofs.blogspot.com/2005/07/mapping-square-to-circle.html
+        /// </summary>
+        public static Vector2 ConvertSquareMapToCircle(Vector2 axis)
+        {
+            return ConvertSquareMapToCircle(axis.x, axis.y);
         }
     }
 

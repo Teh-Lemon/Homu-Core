@@ -52,9 +52,5 @@ namespace TehLemon
         //Animator m_animator;
         //public Animator animator { get { return m_animator ? m_animator : (m_animator = GetComponent<Animator>()); } }
         #endregion
-
-        [HideInInspector]
-        public string DebugText = "";
-
     }
 }

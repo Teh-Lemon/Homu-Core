@@ -16,8 +16,18 @@ namespace TehLemon.Editor
         {
             EditorWindow.GetWindow<MascotPanel>("Mascot");
 
-            m_texture = Resources.Load("EditorResources/mascot") as Texture2D;
-            Assert.IsNotNull(m_texture, "Mascot Panel: Resources/EditorResources/mascot not found");
+            //m_texture = Resources.Load("EditorResources/mascot") as Texture2D;
+            m_texture = EditorGUIUtility.Load("mascot.jpg") as Texture2D;
+            if (m_texture == null)
+            {
+                m_texture = EditorGUIUtility.Load("mascot.png") as Texture2D;
+            }
+            if ( m_texture == null )
+            {
+                m_texture = EditorGUIUtility.Load("mascot.gif") as Texture2D;
+            }
+
+            Assert.IsNotNull(m_texture, "Mascot Panel: Editor Default Resources/mascot not found");
         }
 
         void OnGUI()

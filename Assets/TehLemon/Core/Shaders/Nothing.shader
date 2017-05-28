@@ -1,4 +1,4 @@
-Shader "Lemon/Nothing" 
+Shader "TehLemon/Nothing" 
 {
     SubShader
     {

@@ -25,12 +25,19 @@ Hit **F5** to Play and Stop the game.
 #### Mascot Panel (MascotPanel.cs)
 A panel for the Editor that displays an image.  
 Access from the **Windows** menu.  
-Name your image "mascot" and place it in the folder "**Assets/Resources/EditorResources**".  
+Name your image "mascot" and place it in the folder "**Assets/Editor Default Resources/**".  
+Supports .jpg, .png and .gif.  
 ![Mascot Screenshot](Images/Mascot.png)
 
 #### Revert to Prefab (RevertAllPrefabs.cs)
-Reverts selected gameobjects in the Editor back to their prefab state.
+Reverts all the selected gameobjects in the Editor back to their prefab state.
 Found in the **Tools** menu.
+
+#### Sticky Notes (StickyNote.cs and the Gizmos folder)  
+In-Scene view sticky notes represented with gizmos. Useful for long-term or team projects.  
+Just add the **TehLemon/StickyNote component** onto any gameobject.  
+Add it onto an empty (child) gameoject if you want to move it around. Prefab included.  
+![StickyNotes screenshot](Images/StickyNote.png)
 
 ### Extensions
 
@@ -71,16 +78,5 @@ I'd like to further improve the inspector GUI of the shader to include some of t
 
 #### Math functions (UtilHelper.cs)
 A collection of static math helper functions. Check the comments for more details on each function.
-
-### Recommended Third Party Utilities
-I also include these third party scripts into every new project:
-* https://github.com/madsbangh/EasyButtons  
-Very quickly add buttons for any function of a script into the inspector window.  
-Great for debugging without the need to make an editor script for each script.
-* https://github.com/thefuntastic/Unity3d-Finite-State-Machine  
-Finite State Machine. Simple and flexible.
-* https://www.assetstore.unity3d.com/en/#!/content/24227  
-I use this for my game manager.
-
 
 
