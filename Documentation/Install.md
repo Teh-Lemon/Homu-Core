@@ -17,7 +17,3 @@
 1. Copy and the Homu-Core folder
 2. Paste it anywhere into your project's Assets folder
 3. Include the namespace **WakabaGames.Core** to use its functions and classes
-
-
-
-
