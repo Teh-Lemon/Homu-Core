@@ -9,7 +9,9 @@ Extends the Unity Color class to add extra color presets.
 Adds a shortcut method to Vector3s which allows you to change it by only specifying 1 or more components.  
 Example: 
 ```csharp
+using UnityEngine;
 using WakabaGames.Core;
+
 class Test
 {
     Vector3 position;
@@ -19,8 +21,7 @@ class Test
         position = position.With(y: 10f);
     }
 }
-``` 
-![VectorHelper With screenshot](Images/VectorHelperWithShort.png)
+```
 
 ## Shaders
 
