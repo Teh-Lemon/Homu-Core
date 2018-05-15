@@ -11,9 +11,28 @@
 5. Change the file path so it points to the root of Homu-Core's folder
 6. The file path is relative and you can use `..` to go up a folder
 7. E.g. `"com.wakabagames.homu-core": "file:../../Homu-Core"`
-8. Include the namespace **WakabaGames.Core** to use its functions and classes
 
 ## Manual
 1. Copy and the Homu-Core folder
 2. Paste it anywhere into your project's Assets folder
-3. Include the namespace **WakabaGames.Core** to use its functions and classes
+
+# How to Use
+
+1. If you are using Assembly Definition files  
+a. Include the `Homu-Core.asmdef` file in your dependencies 
+2. Include the namespace **WakabaGames.Core** in your code to use its functions and classes  
+b. E.g.  
+```csharp
+using UnityEngine;
+using WakabaGames.Core;
+
+class Test
+{
+    Vector3 position;
+
+    Test()
+    {
+        position = position.With(y: 10f);
+    }
+}
+```
