@@ -13,7 +13,7 @@
 7. E.g. `"com.wakabagames.homu-core": "file:../../Homu-Core"`
 
 ## Manual
-1. Copy and the Homu-Core folder
+1. Copy the Homu-Core folder
 2. Paste it anywhere into your project's Assets folder
 
 # How to Use
