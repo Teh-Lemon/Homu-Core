@@ -9,6 +9,6 @@ I make no promises over the quality or up-to-date-ness of the code.
 ## [Contents](Documentation/Contents.md)
 ## [How to Install](Documentation/Install.md)
 
-Also consider: [Homu-Editor](https://github.com/Teh-Lemon/Homu-Editor). A collection of utilities for the Unity Editor.
+## Homu Suite
 
-
+Also consider checking out the other packages in the [Homu Suite](https://github.com/search?q=Teh-Lemon%2FHomu) for Unity.
