@@ -6,7 +6,9 @@ Any extra instructions will listed in the comments at the top of the file or fun
 Requires setting Unity to use .net 4.6/C# 6.0.  
 These are only tested against whichever Unity version I happen to be using (usually the latest).
 
-I make no promises over the quality or up-to-date-ness of the code.  
+[MIT License](LICENSE)  
+You may use these freely provided you give credit to "Teh Lemon" and include a copy of the above license.  
+I make no promises over the quality or up-to-date-ness of the code.
 
 ### [How to Install](Documentation/Install.md)
 
